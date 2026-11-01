@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>J.A.R.V.I.S.</title>
+  <meta name="description" content="J.A.R.V.I.S. - an AI assistant with voice, built by Devdut." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <main class="hud">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot" id="statusDot"></span>
+        <span class="title">J.A.R.V.I.S.</span>
+      </div>
+      <div class="status" id="statusText">ONLINE</div>
+    </header>
+
+    <section class="core" aria-hidden="true">
+      <div class="reactor" id="reactor">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="center"></div>
+      </div>
+    </section>
+
+    <section class="chat" id="chat" aria-live="polite">
+      <div class="msg bot">
+        <div class="label">JARVIS</div>
+        <div class="bubble">Good day, sir. All systems are online. How may I assist you?</div>
+      </div>
+    </section>
+
+    <form class="composer" id="form" autocomplete="off">
+      <button type="button" class="icon-btn" id="micBtn" title="Voice input" aria-label="Voice input">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
+      </button>
+      <input id="input" type="text" placeholder="Ask JARVIS anything..." maxlength="2000" />
+      <button type="submit" class="send-btn" id="sendBtn">SEND</button>
+    </form>
+
+    <footer class="options">
+      <label class="toggle"><input type="checkbox" id="speakToggle" checked /> <span>Voice reply</span></label>
+      <label class="toggle">
+        <span>Mic lang</span>
+        <select id="langSelect">
+          <option value="en-IN">English (IN)</option>
+          <option value="hi-IN">Hindi</option>
+          <option value="en-US">English (US)</option>
+        </select>
+      </label>
+      <button type="button" class="link-btn" id="clearBtn">Clear</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
